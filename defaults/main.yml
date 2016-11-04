@@ -1,0 +1,17 @@
+---
+# defaults file for ansible-role-nhc-scripts
+
+nhc_check_location: "/etc/nhc/scripts"
+######
+nhc_remote_url_checks:
+ - { url: "", name: "", checksum: "" }
+# - { url: "http://url1/check_custom", name: "check_url", checksum: "" }
+nhc_local_checks:
+ - { path: "", name: "" }
+# - { path: "files/check_custom2", name: "check_custom2" }
+
+nhc_user: "root"
+nhc_group: "root"
+nhc_check_mode: "0644"
+nhc_check_backup: "no"
+
