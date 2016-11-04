@@ -5,6 +5,8 @@
    pre_tasks:
    - name: touch hosts_file_to_populate
      file: path="/tmp/script_custom2" state=touch
+   - name: create /etc/nhc/scripts
+     file: path="/etc/nhc/scripts" state=directory
    vars:
    - nhc_local_scripts:
      - { path: "/tmp/script_custom2", name: "script_custom2" }
