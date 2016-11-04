@@ -4,10 +4,10 @@
    remote_user: root
    pre_tasks:
    - name: touch hosts_file_to_populate
-     file: path="files/script_custom2" state=touch
+     file: path="/tmp/script_custom2" state=touch
    vars:
    - nhc_local_scripts:
-     - { path: "files/script_custom2", name: "script_custom2" }
+     - { path: "/tmp/script_custom2", name: "script_custom2" }
 
    roles:
      - ansible-role-nhc-scripts
