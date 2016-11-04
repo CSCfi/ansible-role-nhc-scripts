@@ -38,8 +38,8 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: ansible-role-nhc-scripts }
          - { role: ansible-role-nhc }
+         - { role: ansible-role-nhc-scripts }
 
 License
 -------
