@@ -1,15 +1,26 @@
 ---
 # tasks file for ansible-role-nhc-scripts
 
- - name: get_url the remote checks
-   get_url: url={{ item.url }} dest={{ nhc_check_location }}/{{ item.name }} 
-            owner={{ nhc_user }} group={{ nhc_group }} mode={{ nhc_check_mode }} backup={{ nhc_check_backup }}
-            sha256sum={{ item.checksum }}
-   with_items: "{{ nhc_remote_url_checks }}"
-   when: nhc_remote_url_checks.0.url != ""
+ - name: get_url the remote scripts
+   get_url: 
+     url: {{ item.url }} 
+     dest: {{ nhc_script_location }}/{{ item.name }} 
+     owner: {{ nhc_user }} 
+     group: {{ nhc_group }} 
+     mode: {{ nhc_script_mode }} 
+     backup: {{ nhc_script_backup }}
+     sha256sum: {{ item.scriptsum }}
+   with_items: "{{ nhc_remote_url_scripts }}"
+   when: nhc_remote_url_scripts.0.url != ""
 
- - name: copy the local checks
-   copy: src={{ item.path }} dest={{ nhc_check_location }}/{{ item.name }} owner={{ nhc_user }} group={{ nhc_group }} mode={{ nhc_check_mode }} backup={{ nhc_check_backup }}
-   with_items: "{{ nhc_local_checks }}"
-   when: nhc_local_checks.0.path != ""
+ - name: copy the local scripts
+   copy: 
+     src: {{ item.path }} 
+     dest: {{ nhc_script_location }}/{{ item.name }} 
+     owner: {{ nhc_user }} 
+     group: {{ nhc_group }} 
+     mode: {{ nhc_script_mode }} 
+     backup: {{ nhc_script_backup }}
+   with_items: "{{ nhc_local_scripts }}"
+   when: nhc_local_scripts.0.path != ""
 

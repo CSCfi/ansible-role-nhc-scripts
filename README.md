@@ -6,6 +6,10 @@ get_url or copy custom NHC ( Node Health Checker https://github.com/mej/nhc ) pl
 
 This role is _not_ a distribution point of NHC checks - store them where you run ansible or on a web server, or even better package them in RPMs and don't use this role at all :)
 
+**nhc_remote_url_checks** can be used with ansible-pull
+
+**nhc_local_checks** can be used with ansible-playbook (push mode) to copy checks
+
 Requirements
 ------------
 
@@ -15,11 +19,13 @@ Requirements
 Role Variables
 --------------
 
-nhc_scripts_copy:
- - 
-
-nhc_scripts_geturl:
- - url, dest
+Example:
+<pre>
+nhc_remote_url_scripts:
+ - { url: "http://url1/nhc_script_1", name: "nhc_script_1", scriptsum: "7e39171be1095b3c6a35c9649e3d5e73bcf76a3647b99fd7a205248a35d6a6f9" }
+nhc_local_scripts:
+ - { path: "files/nhc_script_2", name: "nhc_script_2" }
+</pre>
 
 Dependencies
 ------------
