@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/CSC-IT-Center-for-Science/ansible-role-nhc-scripts.svg?branch=master)](https://travis-ci.org/CSC-IT-Center-for-Science/ansible-role-nhc-scripts)
+[![Build Status](https://travis-ci.org/CSCfi/ansible-role-nhc-scripts.svg?branch=master)](https://travis-ci.org/CSCfi/ansible-role-nhc-scripts)
 ansible-role-nhc-scripts
 =========
 
@@ -13,7 +13,7 @@ This role is _not_ a distribution point of NHC checks - store them where you run
 Requirements
 ------------
 
- - ansible-role-nhc: https://github.com/CSC-IT-Center-for-Science/ansible-role-nhc
+ - ansible-role-nhc: https://github.com/CSCfi/ansible-role-nhc
   - or at least https://github.com/mej/nhc
 
 Role Variables
